@@ -1,7 +1,4 @@
-1. Command to create a new component:
-> ng generate component <component-name>
-# I have imported home componnet inside app component which implies child
-component can be imported from Parent component
-# Can Parent component can be imported inside child component ?
-# Housing location compoenent can be importe in home compoenent 
-which implies : a child component can be imported in another childe component 
+1. To create a new component, use the command:
+    > ng generate component <component-name>
+
+Note: I have imported the home component inside the app component, which implies that a child component can be imported into a parent component. Can a parent component be imported into a child component? Additionally, the housing location component can be imported into the home component, indicating that a child component can be imported into another child component.
