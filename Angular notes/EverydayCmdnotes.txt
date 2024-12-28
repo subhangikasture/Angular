@@ -1,4 +1,21 @@
-1. To create a new component, use the command:
-    > ng generate component <component-name>
+1. Creating a New Component:
+    To create a new component, use the command:
+    ```sh
+    ng generate component <component-name>
+    ```
 
-Note: I have imported the home component inside the app component, which implies that a child component can be imported into a parent component. Can a parent component be imported into a child component? Additionally, the housing location component can be imported into the home component, indicating that a child component can be imported into another child component.
+    Note: 
+    - I have imported the home component inside the app component, which implies that a child component can be imported into a parent component.
+    - Can a parent component be imported into a child component?
+    - The housing location component can be imported into the home component, indicating that a child component can be imported into another child component.
+
+2. Creating a New Interface:
+    To create a new interface, use the command:
+    ```sh
+    ng generate interface <interface-name>
+    ```
+
+    Questions on this unit:
+    1. We created a `housingLocation` interface which has a set of data in it that we used in the home component. We created an instance of the interface and added values to it. Then, we imported the housing-location component inside the home component.
+    - Question: How is the `housingLocation` interface related to the housing-location component?
+
