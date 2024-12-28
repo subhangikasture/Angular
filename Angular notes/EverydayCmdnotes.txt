@@ -19,10 +19,12 @@
     1. We created a `housingLocation` interface which has a set of data in it that we used in the home component. We created an instance of the interface and added values to it. Then, we imported the housing-location component inside the home component.
     - Question: How is the `housingLocation` interface related to the housing-location component?
 
-3. Add inputs to the component
-    - inputs allow compoenents to share data 
-    - The direction of the data sharing is from parent component to child component
+3. Adding Inputs to a Component:
+    - Inputs allow components to share data.
+    - The direction of data sharing is from the parent component to the child component.
 
-    Question: With standalone = true, will there be a concept of parent child ?
-    syntax:
-    @Input() : it is a decorator 
+    Question: With `standalone = true`, will there still be a concept of parent and child components?
+    Syntax:
+    ```typescript
+    @Input() // It is a decorator
+    ```
