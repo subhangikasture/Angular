@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/* this will add the global color blue as primary color*/
 :root {
     --primary-color: #3498db; /* Example color */
 }
