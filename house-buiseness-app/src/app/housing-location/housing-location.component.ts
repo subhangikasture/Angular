@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { HousingLocation } from '../housing-location';
 import { RouterModule } from '@angular/router';
+import { HousingService } from '../housing.service';
 import { CommonModule } from '@angular/common';
 
 
