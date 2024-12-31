@@ -28,3 +28,11 @@
     ```typescript
     @Input() // It is a decorator
     ```
+4. Debugging Errors:
+    - Question: How do you define which component is parent and which is child?
+    - The `@Input()` decorator always sends the data from the parent to the child.
+    - In our example:
+        - Parent: Home component
+        - Child: Housing-location component
+        - Data needs to be sent from the parent to the child.
+    - Question: What is the need to send the data from the parent component to the child component? Can't the data be fetched at the child component?

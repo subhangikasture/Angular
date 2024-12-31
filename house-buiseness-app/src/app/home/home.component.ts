@@ -12,7 +12,7 @@ import {HousingLocation} from '../housing-location';
   </form>
 </section>
 <section class="content">
-        <app-housing-location></app-housing-location>
+        <app-housing-location [housingLocation_]="housingLocation_homeComponent"></app-housing-location>
       </section>
 
 `,
@@ -20,7 +20,7 @@ import {HousingLocation} from '../housing-location';
 })
 export class HomeComponent {
   readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
-  housingLocation: HousingLocation = {
+  housingLocation_homeComponent: HousingLocation = {
     id: 99999,
     name: "Subhangi",
     city: "Bnaglore",
