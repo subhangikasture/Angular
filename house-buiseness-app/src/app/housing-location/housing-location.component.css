@@ -28,3 +28,8 @@
     content: "\203A";
     margin-left: 5px;
   }
+  .content .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
