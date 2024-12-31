@@ -36,3 +36,16 @@
         - Child: Housing-location component
         - Data needs to be sent from the parent to the child.
     - Question: What is the need to send the data from the parent component to the child component? Can't the data be fetched at the child component?
+5. Services and Dependency injection:
+    1. Testable code
+    2. Reusable code
+    3. Maintainable code
+
+
+6. NgModule comes from FormsModules :import { FormsModule } from '@angular/forms';
+   To fix ngForOf error include commonModule to the imports
+   How to inject a servce into a component:
+    constructor(private housingService: HousingService)
+  {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }

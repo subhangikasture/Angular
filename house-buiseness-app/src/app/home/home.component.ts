@@ -1,11 +1,12 @@
-import { Component, NgModule } from '@angular/core';
+import { Component} from '@angular/core';
 import {HousingLocationComponent} from '../housing-location/housing-location.component';
 import {HousingLocation} from '../housing-location';
 import { CommonModule } from '@angular/common';
+import { HousingService } from '../housing.service';
 
 @Component({
   selector: 'app-home',
-  imports: [ CommonModule, HousingLocationComponent],
+  imports: [ HousingLocationComponent, CommonModule],
   template:`
     <section>
     <form>
@@ -18,52 +19,14 @@ import { CommonModule } from '@angular/common';
         <app-housing-location *ngFor="let location of housingLocationList" [housingLocation_]="location"></app-housing-location>
     </div>
     </section>
+    <section>
 `,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
-
-  housingLocationList: HousingLocation[] = [
-    {
-    id: 99991,
-    name: "Arya stark",
-    city: "North",
-    state: "Karnataka",
-    wifi: true,
-    availableUnits: 8,
-    laundry: true,
-    photo: `${this.baseUrl}/example-house.jpg`
-   },
-   {
-    id: 99992,
-    name: "Sansa stark",
-    city: "North",
-    state: "Karnataka",
-    wifi: true,
-    availableUnits: 8,
-    laundry: true,
-    photo: `${this.baseUrl}/example-house.jpg`
-   },
-   {
-    id: 99993,
-    name: "Jon snow",
-    city: "Winterfell",
-    state: "Karnataka",
-    wifi: true,
-    availableUnits: 8,
-    laundry: true,
-    photo: `${this.baseUrl}/example-house.jpg`
-   },
-   {
-    id: 99994,
-    name: "Drangon mother",
-    city: "7 kingdom",
-    state: "Karnataka",
-    wifi: true,
-    availableUnits: 8,
-    laundry: true,
-    photo: `${this.baseUrl}/example-house.jpg`
-   },
-];
+  housingLocationList : HousingLocation[]=[];
+  constructor(private housingService: HousingService)
+  {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }  
 }
