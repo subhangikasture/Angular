@@ -55,4 +55,7 @@
    - SPA (Single page application) you change what the user sees by showing or hding 
      portions of the display that corresponds to particular components, rather than going out to the server to get a new page
    - To handle the navigation from one view to the next, we use Router
-   
+
+8. Short cmd to create the standalone compoenent 
+    - ng g c details --standalone --inline-template
+    ()
