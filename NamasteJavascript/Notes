@@ -1,0 +1,5 @@
+03/01/2025
+1. Everything javascript haooens inside an Execution context
+2. Two compoenets : memeory : key value pair, functions , variable environment.
+3. Code component : code is executed one line at a time, thread of Execution
+4. javascript is a syncronous , single threadexecution
