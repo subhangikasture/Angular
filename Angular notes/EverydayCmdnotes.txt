@@ -63,3 +63,5 @@
 9. housingLocation?.id  , make housinglocation as undefined
     (submit)="somemethod()" : event binding
     this.applyForm.value.email?? '' : ?? indicates if the left hand side values are null/undefined then value on the right side will be applied
+
+10. json-server --watch db.json
