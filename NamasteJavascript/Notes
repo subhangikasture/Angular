@@ -3,3 +3,4 @@
 2. Two compoenets : memeory : key value pair, functions , variable environment.
 3. Code component : code is executed one line at a time, thread of Execution
 4. javascript is a syncronous , single threadexecution
+5. var n = 2;

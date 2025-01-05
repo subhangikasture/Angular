@@ -7,3 +7,7 @@ function square(n){
 
 var sqr2 = square(n);
 var sqr2 = square(8);
+
+
+let b = 10;
+const c = 20;
