@@ -67,3 +67,30 @@ var a = 10;
     console.log(a); // o/p 20
 }
 //block scopes also follows lexical scope
+
+//Closeure in js
+function x(){
+    var a = 7;
+    function y(){
+        console.log(a);
+    }
+    y();
+}
+x();
+
+//Functions
+//anonymouse function
+//First class functions
+//Calll back, arraow back, Pur functions
+//Function statemnt and function expression, function declaration
+
+//Function statement
+function a(){
+    console.log("a called");
+}
+
+var g = function(){
+    console.log("g called");
+}
+
+//Major difference in Hoisting
