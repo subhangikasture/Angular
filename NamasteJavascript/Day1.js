@@ -85,12 +85,34 @@ x();
 //Function statemnt and function expression, function declaration
 
 //Function statement
+a();
+g(); //error 
 function a(){
     console.log("a called");
-}
+} // Function statement
 
 var g = function(){
     console.log("g called");
-}
+} // Function expression
 
 //Major difference in Hoisting
+
+//anonymous function
+function ()
+{
+
+}; // This is anonymous function
+var h = function xzt(){};
+
+xzt(); //error
+
+function gty(param1, param2){ //param1 and param2 are called formal parameters /local parameters 
+    console.log(param1);
+    console.log(param2);
+}
+
+gty(10, 20); // 10, 20 are called actual parameters / arguments
+//Functions inside another function as arguemnets
+
+//The ability to use functions as arguments is a powerful feature of JavaScript. The function that is passed as an argument is called a callback function.this is called first class function
+// Functions are first class citizens in JS
