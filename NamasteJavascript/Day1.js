@@ -116,3 +116,12 @@ gty(10, 20); // 10, 20 are called actual parameters / arguments
 
 //The ability to use functions as arguments is a powerful feature of JavaScript. The function that is passed as an argument is called a callback function.this is called first class function
 // Functions are first class citizens in JS
+
+//callback function, event listeners
+//functions are first class citizens in JS
+//asyn is possible by call back mechanism 
+
+function x(){
+    console.log("x called");
+}
+x(y()); // y is call back function
