@@ -125,3 +125,45 @@ function x(){
     console.log("x called");
 }
 x(y()); // y is call back function
+
+/*
+10/01/25
+Web api's 
+1. DOM
+2. AJAX 
+3. Timeout
+4. Interval
+5. Fetch
+6. Local storage
+7. Session storage
+8. Cookies
+9. Web workers
+10. Service workers
+11. Web sockets
+12. IndexDB
+13. File API
+14. Geolocation
+15. Notifications
+16. Fullscreen
+17. History
+18. Location
+19. Navigator
+20. Screen
+21. Style
+22. Window
+23. Console
+24. Document
+
+DOM - Document Object Model
+- Document is a root object
+- Document is a global object
+
+DOM is a tree like structure
+- Document is a root node
+- Document has child nodes
+- Child nodes are called elements
+- Elements have child nodes
+- Elements have attributes
+
+
+*/
