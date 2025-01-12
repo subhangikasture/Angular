@@ -11,3 +11,17 @@ console.log(dataPromise); // Promise {<fulfilled>: "Namaste Javascript"}
 
 dataPromise.then (data => console.log(data)); // Namaste Javascript
 
+//Create a promise and resolve
+const p = new Promise((resolve, reject) => {
+    resolve("Resolved promise data");
+});
+
+async function getPromiseData() {
+    return  p;
+}
+
+const dataPromise2 = getPromiseData();
+
+dataPromise2.then (data => console.log(data)); // Promise {<fulfilled>: "Resolved promise data"}
+console.log( "inside promise :" +  p);
+console.log("outside promose function : " +   getPromiseData()); // Promise {<fulfilled>: Promise {<fulfilled>: "Resolved promise data"}}
