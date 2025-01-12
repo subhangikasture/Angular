@@ -99,13 +99,15 @@ const p2 = new Promise((resolve, reject) => {
 
     //fetch api
     const API_URL = "https://api.github.com/users/subhangikasture";
-    async function fetchUsers(){
-       
+    async function fetchUsers(){  
      // console.log( "will await resolves fetch an dprints? "+ await fetch(API_URL)) //o/p = will await resolves fetch an dprints? [object Response]
-      const val  = await fetch(API_URL);
+     try{
+      const val  = await fetch("API_URL");
       const jsonVal =  await val.json();
       console.log("1 jsonval ",  jsonVal);
-
+     }
+    catch(err)
+    {
+        console.log("Error occured "+err);}
     }
-
     fetchUsers();
