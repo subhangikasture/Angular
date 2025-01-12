@@ -62,7 +62,20 @@ function testWithoutAwait(){
     p.then ((res)=>console.log("1 Inside testWithoutAwait function after promise "+res));
     console.log("2 Inside testWithoutAwait function after promise ");
 }
-testWithoutAwait();
+//testWithoutAwait();
 /*o/p
 2 Inside testWithoutAwait function after promise 
 index.js:62 1 Inside testWithoutAwait function after promise Resolved promise data */
+
+//Let test if the await function be called twice will it wait for the first await to complete
+async function testAwaitTwice(){
+    const val = await p;
+    console.log("1 Inside testAwaitTwice function after promise "+val);
+    const val2 = await p;
+    console.log("2 Inside testAwaitTwice function after promise "+val2);
+}
+testAwaitTwice();
+
+//Conclusion : Yes it will wait for the first await to complete and then only it will go to the next await
+//above statment is incorrect 
+//after 10 seconds both the await will be resolved together 
