@@ -65,3 +65,5 @@
     this.applyForm.value.email?? '' : ?? indicates if the left hand side values are null/undefined then value on the right side will be applied
 
 10. json-server --watch db.json
+
+//Location to get the yearly calender : https://www.vecteezy.com/vector-art/36009076-one-page-2025-calendar-design-template-for-business-corporate-office
