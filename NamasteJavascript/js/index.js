@@ -18,7 +18,7 @@ dataPromise.then (data => console.log(data)); // Namaste Javascript
 const p = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve("Resolved promise data");
-    }, 10000);
+    },5000);
 });
 /*
 const dataPromise2 = getPromiseData();
@@ -74,8 +74,38 @@ async function testAwaitTwice(){
     const val2 = await p;
     console.log("2 Inside testAwaitTwice function after promise "+val2);
 }
-testAwaitTwice();
+//testAwaitTwice();
 
 //Conclusion : Yes it will wait for the first await to complete and then only it will go to the next await
 //above statment is incorrect 
 //after 10 seconds both the await will be resolved together 
+
+//lets create one more promise
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise 2 resolved");
+    }, 10000);
+ });
+
+ async function testAwaitTwiceWithTwoPromises()
+    {
+        const val1 = await p;
+        console.log("1 Inside testAwaitTwiceWithTwoPromises function after promise "+val1);
+
+        const val2 = await p2;
+        console.log("2 Inside testAwaitTwiceWithTwoPromises function after promise "+val2);
+    }
+    //testAwaitTwiceWithTwoPromises();
+
+    //fetch api
+    const API_URL = "https://api.github.com/users/subhangikasture";
+    async function fetchUsers(){
+       
+     // console.log( "will await resolves fetch an dprints? "+ await fetch(API_URL)) //o/p = will await resolves fetch an dprints? [object Response]
+      const val  = await fetch(API_URL);
+      const jsonVal =  await val.json();
+      console.log("1 jsonval ",  jsonVal);
+
+    }
+
+    fetchUsers();
