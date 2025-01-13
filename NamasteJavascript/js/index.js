@@ -101,13 +101,31 @@ const p2 = new Promise((resolve, reject) => {
     const API_URL = "https://api.github.com/users/subhangikasture";
     async function fetchUsers(){  
      // console.log( "will await resolves fetch an dprints? "+ await fetch(API_URL)) //o/p = will await resolves fetch an dprints? [object Response]
-     try{
+    
       const val  = await fetch("API_URL");
       const jsonVal =  await val.json();
       console.log("1 jsonval ",  jsonVal);
-     }
-    catch(err)
-    {
-        console.log("Error occured "+err);}
+    
     }
-    fetchUsers();
+    //fetchUsers();
+    //fetchUsers.catch(err => console.log("Error occured SSS "+err));
+
+
+    console.log("1 Before calling Call back function");
+
+    setTimeout(function (){
+        console.log("2 Inside call back function");
+    },5000);
+    
+
+
+    console.log("3 Season 2");
+
+    const cart = [" shoes", "shirt", "pant", "watch"];
+    api.createOreder(cart, function(){
+        api.proceedToPayment(function(){
+            api.payment(function(){
+                api.showOrderSummary();
+            });
+        });
+    });
