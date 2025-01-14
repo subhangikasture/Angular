@@ -141,7 +141,7 @@ const p2 = new Promise((resolve, reject) => {
   fetchUser.then((response)=>{console.log("response", response.json());})
 
 */
-
+/*
 //Creating promise
 
 const cart = [" shoes", "shirt", "pant", "watch"];
@@ -151,6 +151,8 @@ console.log("Promise", promise);
 promise.then((orderId) => {
     console.log("Order ID: ", orderId);
     return orderId;
+}).catch((err) =>{
+    console.log("Error: ", "cart is not valid");
 })
 .then(function(orderId){
    return proceedToPayment(orderId);   
@@ -158,9 +160,7 @@ promise.then((orderId) => {
 .then((proceedToPayment_) => {
     console.log("Payment result: ", proceedToPayment_);
 })
-.catch((err) =>{
-    console.log("Error: ", "cart is not valid");
-})
+
 function createOrder(cart){
     const pr = new Promise((resolve, reject) => {
         //createOrder
@@ -191,7 +191,61 @@ function proceedToPayment(orderId){
 
 function validateCart(cart){
     if(cart.length > 0){
-        return true;
+        return false;
     }
     return false;
+}*/
+
+//Home work 
+/*
+function : cart with four items 
+1. createOrder(cart) : creates ordre
+2. proceedTopayment(orderId) : proceed to payment
+3. ShowOrderSummary(orderId) : show order summary
+4. updateValatecart(cart) : validate cart
+*/
+
+const cart  = ["shirt", "heels", "watch", "lipstick"]; //extention can you include number of items and price
+ 
+createOrder(cart)
+.then((orderId)=>{
+    console.log("Order ID: ", orderId);
+    return orderId;
+})
+.then(function(cart_){
+    return proceedToPayment(cart);
+})
+.then((proceedToPayment_) => {
+    console.log("Payment result: ", proceedToPayment_);
+    return showOrderSummary(cart);
+})
+.catch((err) => {     
+    console.log("Error: ", err);
+  } );
+
+
+function createOrder(cart){
+    const pr = new Promise((resolve, reject) =>{
+        if(cart.length > 0){
+            resolve("Order created");
+        }else{
+            reject("Cart is empty");
+        }
+    });
+    return pr;
 }
+
+function proceedToPayment(cart){
+    //Extension of the project could be based one the number of items and price per each item , a function to calculate toatal amount 
+    return new Promise((resolve, reject) => {
+        resolve ("Payment done for order" + cart); 
+    })
+}
+
+function showOrderSummary(cart){
+    return new Promise((resolve, reject)=>{       
+        resolve("Order Summary :"+ cart);
+    })
+}
+
+
