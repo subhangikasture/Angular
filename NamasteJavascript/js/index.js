@@ -81,7 +81,7 @@ async function testAwaitTwice(){
 //after 10 seconds both the await will be resolved together 
 
 //lets create one more promise
-const p2 = new Promise((resolve, reject) => {
+const pl = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve("Promise 2 resolved");
     }, 10000);
@@ -195,15 +195,15 @@ function validateCart(cart){
     }
     return false;
 }*/
-
-//Home work 
 /*
+//Home work 
+
 function : cart with four items 
 1. createOrder(cart) : creates ordre
 2. proceedTopayment(orderId) : proceed to payment
 3. ShowOrderSummary(orderId) : show order summary
 4. updateValatecart(cart) : validate cart
-*/
+
 
 const cart  = ["shirt", "heels", "watch", "lipstick"]; //extention can you include number of items and price
  
@@ -248,4 +248,31 @@ function showOrderSummary(cart){
     })
 }
 
+*/
 
+
+const p1 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        resolve("Promise 1 resolved");
+    }, 3000);
+});
+
+const  p2= new Promise((resolve, reject) =>{    
+    setTimeout(() => {
+        resolve("Promise 2 resolved");
+    }, 1000);
+})
+
+const  p3= new Promise((resolve, reject) =>{    
+    setTimeout(() => {
+        reject("Promise 3 resolved");
+    }, 2000);
+})
+
+Promise.all([p1, p2, p3]).then((result) => {
+    console.log("Promise.all", result);
+}).catch((err) => {
+    console.log("Error: ", err)});
+
+ //if all resolves then after 3 s we get the result
+// whichever fails first immediatly it throws the un caught error
