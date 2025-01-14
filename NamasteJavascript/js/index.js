@@ -150,8 +150,16 @@ console.log("Promise", promise);
 
 promise.then((orderId) => {
     console.log("Order ID: ", orderId);
-}).catch((err) =>{
-    console.log("Error: ", err);
+    return orderId;
+})
+.then(function(orderId){
+   return proceedToPayment(orderId);   
+})
+.then((proceedToPayment_) => {
+    console.log("Payment result: ", proceedToPayment_);
+})
+.catch((err) =>{
+    console.log("Error: ", "cart is not valid");
 })
 function createOrder(cart){
     const pr = new Promise((resolve, reject) => {
@@ -172,6 +180,13 @@ function createOrder(cart){
         }    
    });
   return pr;
+}
+
+function proceedToPayment(orderId){
+    console.log("Proceed to payment");
+    return new Promise(function(resolve, reject){
+        resolve("Payment done");
+    });
 }
 
 function validateCart(cart){
