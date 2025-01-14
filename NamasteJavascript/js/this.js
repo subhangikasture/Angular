@@ -14,7 +14,7 @@ x : function(){
 }
 obj.x(); 
 obj.y();
-
+//enclosing lexical context
 const obj2 = {
     a:10,
     x : function(){
@@ -25,3 +25,4 @@ const obj2 = {
     },
 }
 obj2.x();
+//this in html DOM is html element
