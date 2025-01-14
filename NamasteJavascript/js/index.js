@@ -1,3 +1,4 @@
+//"use strict";
 console.log("Hello World");
 
 // async function always returns promise , if you don't return promise then it will wrap the return value in promise
@@ -249,7 +250,7 @@ function showOrderSummary(cart){
 }
 
 */
-
+/*
 
 const p1 = new Promise((resolve, reject) =>{
     setTimeout(() => {
@@ -268,7 +269,7 @@ const  p3= new Promise((resolve, reject) =>{
         reject("Promise 3 resolved");
     }, 2000);
 })
-
+*/
 /*
 Promise.all([p1, p2, p3]).then((result) => {
     console.log("Promise.all", result);
@@ -295,8 +296,23 @@ Promise.race([p1, p2, p3]).then((result) => {
 }).catch((err) => {
     console.log("Error: ", err)});
     */
-
+/*
 Promise.any([p1, p2, p3]).then((result) => {
     console.log("Promise.any", result);
 }).catch((err) => {
     console.log("Error: ", err)});
+    */
+
+    //this keyword
+    //this keyword in global context
+
+//this in global space
+
+console.log(this)  //Global oject: windows, global
+
+//this inside function
+
+function myFunction(){              
+    console.log(this); //windows
+}   
+myFunction();                            
