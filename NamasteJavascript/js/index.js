@@ -253,13 +253,13 @@ function showOrderSummary(cart){
 
 const p1 = new Promise((resolve, reject) =>{
     setTimeout(() => {
-        resolve("Promise 1 resolved");
+        reject("Promise 1 resolved");
     }, 3000);
 });
 
 const  p2= new Promise((resolve, reject) =>{    
     setTimeout(() => {
-        resolve("Promise 2 resolved");
+        reject("Promise 2 resolved");
     }, 1000);
 })
 
@@ -269,6 +269,7 @@ const  p3= new Promise((resolve, reject) =>{
     }, 2000);
 })
 
+/*
 Promise.all([p1, p2, p3]).then((result) => {
     console.log("Promise.all", result);
 }).catch((err) => {
@@ -276,3 +277,26 @@ Promise.all([p1, p2, p3]).then((result) => {
 
  //if all resolves then after 3 s we get the result
 // whichever fails first immediatly it throws the un caught error
+*/
+
+/*
+Promise.allSettled([p1, p2, p3])
+.then((result) => {
+console.log("Promise.allSettled", result);
+})
+.catch((err) => { console.log("Error: ", err)});
+
+//Get results of all api and then show the result  
+*/
+
+/*
+Promise.race([p1, p2, p3]).then((result) => {
+    console.log("Promise.race", result);
+}).catch((err) => {
+    console.log("Error: ", err)});
+    */
+
+Promise.any([p1, p2, p3]).then((result) => {
+    console.log("Promise.any", result);
+}).catch((err) => {
+    console.log("Error: ", err)});

@@ -1,1 +1,20 @@
 call back hell :
+Interview quesion 
+promise.all : for parellel api call
+
+1. HTML, CSS
+2. Javascript topics to know
+3. Variables: var, let and const 
+4. Hoisting 
+5. Functions : heart of Javascript
+6. Arrow functions and higher order function 
+7. Arrays and Objects : Array destructuring, Object destructuring , rest operator and spread operator 
+8. if else and conditions, ternary operators , using && and ||, optional chaining  
+9. map(), filter() , reduce() , sort ()
+10. Event listener , click, onMouseUp, submit, event bubbling 
+11. Event listeners 1. onClick 2. onBlur 3. onChange 4. onFocus 5. setTimeout() 6. setInterval()
+12. Event bubbling  and capturing
+13. Callback, promises
+14. Asynchronous Events : Callbacks, callback hell, Promises, Promise api
+15. async and await
+16. try and catch : handling error gracefully 
