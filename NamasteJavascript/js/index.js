@@ -110,7 +110,7 @@ const p2 = new Promise((resolve, reject) => {
     //fetchUsers();
     //fetchUsers.catch(err => console.log("Error occured SSS "+err));
 
-
+/*
     console.log("1 Before calling Call back function");
 
     setTimeout(function (){
@@ -118,8 +118,8 @@ const p2 = new Promise((resolve, reject) => {
     },5000);
     
 
-
-    console.log("3 Season 2");
+*/
+  //  console.log("3 Season 2");
 /*
 //Call back hell
     const cart = [" shoes", "shirt", "pant", "watch"];
@@ -132,9 +132,51 @@ const p2 = new Promise((resolve, reject) => {
     });
 
 */
+/*
     const user = API_URL;
 
   const fetchUser = fetch(user);
   console.log("fetchuser", fetchUser);
 
   fetchUser.then((response)=>{console.log("response", response.json());})
+
+*/
+
+//Creating promise
+
+const cart = [" shoes", "shirt", "pant", "watch"];
+const promise = createOrder(cart);
+console.log("Promise", promise);
+
+promise.then((orderId) => {
+    console.log("Order ID: ", orderId);
+}).catch((err) =>{
+    console.log("Error: ", err);
+})
+function createOrder(cart){
+    const pr = new Promise((resolve, reject) => {
+        //createOrder
+        //validateCart
+        //orderCart
+        if(!validateCart(cart)){
+            const err = new Error("Cart is not valid");
+            reject(err);
+        }
+        const orderId = "1234";
+        if(orderId){
+            setTimeout(() => {
+                resolve(orderId);
+            }, 5000);
+        }else{
+            reject("Order not placed");
+        }    
+   });
+  return pr;
+}
+
+function validateCart(cart){
+    if(cart.length > 0){
+        return true;
+    }
+    return false;
+}
