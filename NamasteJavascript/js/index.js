@@ -120,7 +120,8 @@ const p2 = new Promise((resolve, reject) => {
 
 
     console.log("3 Season 2");
-
+/*
+//Call back hell
     const cart = [" shoes", "shirt", "pant", "watch"];
     api.createOreder(cart, function(){
         api.proceedToPayment(function(){
@@ -129,3 +130,11 @@ const p2 = new Promise((resolve, reject) => {
             });
         });
     });
+
+*/
+    const user = API_URL;
+
+  const fetchUser = fetch(user);
+  console.log("fetchuser", fetchUser);
+
+  fetchUser.then((response)=>{console.log("response", response.json());})
